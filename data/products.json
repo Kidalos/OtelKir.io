@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "name": "Футболка",
+      "description": "Удобная футболка из хлопка",
+      "price": 500,
+      "image": "img/tshirt.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Джинсы",
+      "description": "Классические джинсы",
+      "price": 1500,
+      "image": "img/jeans.jpg"
+    }
+  ]

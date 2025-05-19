@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Hotel Management</title>
+    <link rel="stylesheet" href="css/mainAdmin.css">
+</head>
+
+<body>
+    <header class="adminn__header">
+        <div class="adminn__header__logo">
+            <a href="main.html" class="adminn__header__logo-link">
+                <img src="img/Hotel Logo.png" alt="Hotel Logo">
+            </a>
+        </div>
+        <h1>Hotel Admin Panel</h1>
+        <a href="#" class="adminn__header__logout">Logout</a>
+    </header>
+    <main class="adminn__main">
+        <!-- Special Offers Section -->
+        <section class="adminn__section">
+            <div class="adminn__section__header">
+                <h2>Special Offers</h2>
+                <button class="adminn__section__add-btn" data-type="special-offer">Add New Offer</button>
+            </div>
+            <div class="adminn__table">
+                <div class="adminn__table__head">
+                    <div>ID</div>
+                    <div>Title</div>
+                    <div>Description</div>
+                    <div>Price</div>
+                    <div>Image</div>
+                    <div>Actions</div>
+                </div>
+                <div class="adminn__table__body" id="special-offers-table">
+                    <div class="adminn__table__row" data-id="1">
+                        <div>1</div>
+                        <div>Honeymoon</div>
+                        <div>Indulge in a Memorable One-Time Romantic Dinner for Two</div>
+                        <div>$699</div>
+                        <div>img/Rectangle 13.png</div>
+                        <div>
+                            <button class="adminn__table__edit-btn" data-type="special-offer" data-id="1">Edit</button>
+                            <button class="adminn__table__delete-btn" data-id="1">Delete</button>
+                        </div>
+                    </div>
+                    <div class="adminn__table__row" data-id="2">
+                        <div>2</div>
+                        <div>Meetings</div>
+                        <div>Experience an Exclusively Private Environment to Boost Your Productivity</div>
+                        <div>$999</div>
+                        <div>img/Rectangle 14.png</div>
+                        <div>
+                            <button class="adminn__table__edit-btn" data-type="special-offer" data-id="2">Edit</button>
+                            <button class="adminn__table__delete-btn" data-id="2">Delete</button>
+                        </div>
+                    </div>
+                    <div class="adminn__table__row" data-id="3">
+                        <div>3</div>
+                        <div>Honeymoon</div>
+                        <div>Indulge in a Memorable One-Time Romantic Dinner for Two</div>
+                        <div>$499</div>
+                        <div>img/Rectangle 15.png</div>
+                        <div>
+                            <button class="adminn__table__edit-btn" data-type="special-offer" data-id="3">Edit</button>
+                            <button class="adminn__table__delete-btn" data-id="3">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="adminn__section">
+            <div class="adminn__section__header">
+                <h2>Rooms</h2>
+                <button class="adminn__section__add-btn" data-type="room">Add New Room</button>
+            </div>
+            <div class="adminn__table">
+                <div class="adminn__table__head">
+                    <div>ID</div>
+                    <div>Title</div>
+                    <div>Description</div>
+                    <div>Price</div>
+                    <div>Image</div>
+                    <div>Actions</div>
+                </div>
+                <div class="adminn__table__body" id="rooms-table">
+                    <div class="adminn__table__row" data-id="1">
+                        <div>1</div>
+                        <div>Standard Room</div>
+                        <div>Cozy room with a single bed</div>
+                        <div>$200</div>
+                        <div>img/standard-room.png</div>
+                        <div>
+                            <button class="adminn__table__edit-btn" data-type="room" data-id="1">Edit</button>
+                            <button class="adminn__table__delete-btn" data-id="1">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="adminn__section">
+            <div class="adminn__section__header">
+                <h2>Services</h2>
+                <button class="adminn__section__add-btn" data-type="service">Add New Service</button>
+            </div>
+            <div class="adminn__table">
+                <div class="adminn__table__head">
+                    <div>ID</div>
+                    <div>Title</div>
+                    <div>Description</div>
+                    <div>Image</div>
+                    <div>Actions</div>
+                </div>
+                <div class="adminn__table__body" id="services-table">
+                    <div class="adminn__table__row" data-id="1">
+                        <div>1</div>
+                        <div>Dining</div>
+                        <div>Fine dining experience</div>
+                        <div>img/Dining.png</div>
+                        <div>
+                            <button class="adminn__table__edit-btn" data-type="service" data-id="1">Edit</button>
+                            <button class="adminn__table__delete-btn" data-id="1">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="adminModal" style="display: none;">
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+            <h2 id="modalTitle">Add/Edit Item</h2>
+            <form id="adminForm">
+                <div class="modal__field">
+                    <label for="itemType">Item Type</label>
+                    <select id="itemType" name="itemType" disabled>
+                        <option value="special-offer">Special Offer</option>
+                        <option value="room">Room</option>
+                        <option value="service">Service</option>
+                    </select>
+                </div>
+                <div class="modal__field">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="modal__field">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="modal__field">
+                    <label for="price">Price (if applicable)</label>
+                    <input type="text" id="price" name="price">
+                </div>
+                <div class="modal__field">
+                    <label for="image">Image URL</label>
+                    <input type="text" id="image" name="image">
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__bottom">
+            <p>© Copyright Booking Hotels. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script — копия.js"></script>
+</body>
+
+</html>
